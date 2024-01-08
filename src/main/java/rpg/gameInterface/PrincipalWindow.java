@@ -87,8 +87,8 @@ public class PrincipalWindow {
     private void newExploration() {
         Exploration ex = new Exploration(this);
         ex.startExploration();
-
-
+        mainPanel.add(topPanel, BorderLayout.NORTH);
+        frame.repaint();
     }
 
     public Person getPn() {
