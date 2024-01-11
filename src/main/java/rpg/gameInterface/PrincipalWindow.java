@@ -36,7 +36,7 @@ public class PrincipalWindow {
 
         labImage = new JLabel();
 
-        botExplore = new JButton("START");
+        botExplore = new JButton("FIGHT");
 
     }
 

@@ -1,5 +1,6 @@
 package rpg.characters.entity;
 
+import rpg.gameInterface.FinalWindow;
 import rpg.gameInterface.PrincipalWindow;
 
 import javax.swing.*;
@@ -96,8 +97,70 @@ public class Exploration {
 
     }
 
+<<<<<<< Updated upstream
     private Object attack() {
         return null;
+=======
+    private void attack() {
+
+        int damage;
+        pn.fight(enemy);
+
+        explorationInfo.setText(explorationInfo.getText() + pn.getName()
+                + " attacks with a force of " + pn.getAttack() + ".\n");
+
+        damage = pn.getAttack() - enemy.getDefense();
+
+        if (damage <= 0) damage = 1;
+
+        explorationInfo.setText(explorationInfo.getText() + enemy.getName()
+                + " has received " + damage + " damage due to your defense.\n\n");
+
+        enemy.establishHealth(enemy.getActualHealth());
+        if (!enemy.isItsAlive()) {
+            enemyDefeated();
+        } else {
+            enemy.fight(pn);
+            explorationInfo.setText(explorationInfo.getText() + enemy.getName()
+                    + " attacks with a force of " + enemy.getAttack() + ".\n");
+
+            damage = enemy.getAttack() - pn.getDefense();
+            if (damage <= 0) damage = 1;
+
+            explorationInfo.setText(explorationInfo.getText() + pn.getName()
+                    + " has received " + damage + " damage due to your defense.\n\n");
+            pn.establishHealth(pn.getActualHealth());
+
+            if (!pn.isItsAlive()) derrota();
+
+        }
+    }
+
+    private void derrota() {
+
+        FinalWindow f = new FinalWindow(FinalWindow.DEFEAT, pn);
+        f.open();
+    }
+
+    private void enemyDefeated() {
+
+        botAttack.setEnabled(false);
+        botEscape.setText("Exit");
+
+        explorationInfo.setText(explorationInfo.getText() + enemy.getName() + " has been defeated.\n"
+                + "You receive " + enemy.getGoldReward() + " gold.\n"
+                + "You get " + enemy.getExpReward() + " exp points.");
+
+        pn.upExp(enemy.getExpReward());
+        pw.getLabExp().setText("  Exp: " + pn.getExp() + "/" + pn.getNecessaryExp());
+        pw.getLabLevel().setText("  Lvl: " + pn.getLevel());
+        pw.getLabAttributes().setText(" Dmg: " + pn.getAttack() + "  |  Def: " + pn.getDefense() + "   Health: ");
+
+        pn.setGold(enemy.getGoldReward());
+        pw.getLabGold().setText("  Gold: " + pn.getGold());
+
+
+>>>>>>> Stashed changes
     }
 
 }
