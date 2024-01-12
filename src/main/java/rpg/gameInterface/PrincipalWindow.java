@@ -96,7 +96,23 @@ public class PrincipalWindow {
     }
 
     public JPanel getTopPanel() {
-        return  topPanel;
+        return topPanel;
+    }
+
+    public JLabel getLabLevel() {
+        return labLevel;
+    }
+
+    public JLabel getLabExp() {
+        return labExp;
+    }
+
+    public JLabel getLabGold() {
+        return labGold;
+    }
+
+    public JLabel getLabAttributes() {
+        return labAttributes;
     }
 
 }

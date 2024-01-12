@@ -47,7 +47,10 @@ public class Entity implements IAttackable {
             int totalAmount = amount - defense;
             if (totalAmount <= 0) totalAmount = 1;
             actualHealth -= totalAmount;
-            if (actualHealth <= 0) itsAlive = false;
+            if (actualHealth <= 0) {
+                itsAlive = false;
+                actualHealth = 0;
+            }
         }
     }
 

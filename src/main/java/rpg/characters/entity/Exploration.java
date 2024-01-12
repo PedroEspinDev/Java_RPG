@@ -18,15 +18,16 @@ public class Exploration {
     private Enemy enemy;
 
     private static int numExploration = 0;
+    private PrincipalWindow pw;
 
-    public Exploration(PrincipalWindow mw) {
-
-        pn = mw.getPn();
+    public Exploration(PrincipalWindow pw) {
+        this.pw = pw;
+        pn = pw.getPn();
 
         frame = new JDialog();
 
         principalPanel = new JPanel(new BorderLayout());
-        topPanel = mw.getTopPanel();
+        topPanel = pw.getTopPanel();
         bottomPanel = new JPanel();
         monsterPanel = new JPanel();
         secMonsterPanel = new JPanel();
@@ -97,10 +98,6 @@ public class Exploration {
 
     }
 
-<<<<<<< Updated upstream
-    private Object attack() {
-        return null;
-=======
     private void attack() {
 
         int damage;
@@ -137,7 +134,6 @@ public class Exploration {
     }
 
     private void derrota() {
-
         FinalWindow f = new FinalWindow(FinalWindow.DEFEAT, pn);
         f.open();
     }
@@ -159,8 +155,6 @@ public class Exploration {
         pn.setGold(enemy.getGoldReward());
         pw.getLabGold().setText("  Gold: " + pn.getGold());
 
-
->>>>>>> Stashed changes
     }
 
 }

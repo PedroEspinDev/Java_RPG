@@ -75,7 +75,7 @@ public class FinalWindow {
         principalPanel.add(exitButton, BorderLayout.SOUTH);
 
         frame.add(principalPanel);
-        frame.setSize(600, 600);
+        frame.setSize(500, 500);
         frame.setLocationRelativeTo(null);
         frame.setModal(true);
 
