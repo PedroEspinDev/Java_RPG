@@ -22,7 +22,7 @@ public class Exploration {
 
     public Exploration(PrincipalWindow pw) {
         this.pw = pw;
-        player = pw.getPn();
+        player = pw.getPlayer();
 
         frame = new JDialog();
 
@@ -152,8 +152,9 @@ public class Exploration {
         pw.getLabLevel().setText("  Lvl: " + player.getLevel());
         pw.getLabAttributes().setText(" Dmg: " + player.getAttack() + "  |  Def: " + player.getDefense() + "   Health: ");
 
-        player.setGold(enemy.getGoldReward());
-        pw.getLabGold().setText("  Gold: " + player.getGold());
+        // Add the gold reward to the player's existing gold.
+        player.addGold(enemy.getGoldReward());
+        pw.getLabGold().setText("  Gold: " + enemy.getGoldReward());
 
     }
 

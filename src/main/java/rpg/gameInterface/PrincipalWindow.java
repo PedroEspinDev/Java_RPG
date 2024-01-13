@@ -17,10 +17,10 @@ public class PrincipalWindow {
 
     private JButton botExplore;
 
-    private Player pn;
+    private Player player;
 
-    public PrincipalWindow(Player pn) {
-        this.pn = pn;
+    public PrincipalWindow(Player player) {
+        this.player = player;
 
         frame = new CustomFrame(800, 800, "RPG", true);
 
@@ -28,11 +28,11 @@ public class PrincipalWindow {
         topPanel = new JPanel();
         bottomPanel = new JPanel();
 
-        labName = new JLabel(pn.getName() + "     ");
-        labLevel = new JLabel("  Lvl: " + pn.getLevel());
-        labExp = new JLabel("  Exp: " + pn.getExp() + "/" + pn.getNecessaryExp());
-        labGold = new JLabel("  Gold: " + pn.getGold());
-        labAttributes = new JLabel(" Dmg: " + pn.getAttack() + "  |  Def: " + pn.getDefense() + "   Health: ");
+        labName = new JLabel(player.getName() + "     ");
+        labLevel = new JLabel("  Lvl: " + player.getLevel());
+        labExp = new JLabel("  Exp: " + player.getExp() + "/" + player.getNecessaryExp());
+        labGold = new JLabel("  Gold: " + player.getGold());
+        labAttributes = new JLabel(" Dmg: " + player.getAttack() + "  |  Def: " + player.getDefense() + "   Health: ");
 
         labImage = new JLabel();
 
@@ -56,7 +56,7 @@ public class PrincipalWindow {
         topPanel.add(labExp);
         topPanel.add(labGold);
         topPanel.add(labAttributes);
-        topPanel.add(pn.getHealthBar());
+        topPanel.add(player.getHealthBar());
 
         //Create the central image of the windows.
         labImage.setIcon(new ImageIcon("./images/portada1.jpg"));
@@ -91,8 +91,8 @@ public class PrincipalWindow {
         frame.repaint();
     }
 
-    public Player getPn() {
-        return pn;
+    public Player getPlayer() {
+        return player;
     }
 
     public JPanel getTopPanel() {

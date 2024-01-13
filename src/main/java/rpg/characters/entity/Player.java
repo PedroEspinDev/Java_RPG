@@ -12,6 +12,9 @@ public class Player extends Entity {
         exp = 0;
         necessaryExp = 10;
     }
+    public void addGold(int gold) {
+        this.gold += gold;
+    }
 
     public int getLevel() {
         return level;
