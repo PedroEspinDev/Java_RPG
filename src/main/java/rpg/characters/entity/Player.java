@@ -1,11 +1,11 @@
 package rpg.characters.entity;
 
-public class Person extends Entity {
+public class Player extends Entity {
 
     private int level, gold, exp, necessaryExp;
 
 
-    public Person(String name, int attack, int defense, double MaxHealth) {
+    public Player(String name, int attack, int defense, double MaxHealth) {
         super(name, attack, defense, MaxHealth);
         level = 1;
         gold = 0;

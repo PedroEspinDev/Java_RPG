@@ -2,7 +2,7 @@ package rpg.gameInterface;
 
 import customPanelFrame.CustomFrame;
 import rpg.characters.entity.Exploration;
-import rpg.characters.entity.Person;
+import rpg.characters.entity.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,9 +17,9 @@ public class PrincipalWindow {
 
     private JButton botExplore;
 
-    private Person pn;
+    private Player pn;
 
-    public PrincipalWindow(Person pn) {
+    public PrincipalWindow(Player pn) {
         this.pn = pn;
 
         frame = new CustomFrame(800, 800, "RPG", true);
@@ -91,7 +91,7 @@ public class PrincipalWindow {
         frame.repaint();
     }
 
-    public Person getPn() {
+    public Player getPn() {
         return pn;
     }
 

@@ -14,7 +14,7 @@ public class Exploration {
     private JTextArea explorationInfo;
     private JScrollPane barDes;
 
-    private Person pn;
+    private Player player;
     private Enemy enemy;
 
     private static int numExploration = 0;
@@ -22,7 +22,7 @@ public class Exploration {
 
     public Exploration(PrincipalWindow pw) {
         this.pw = pw;
-        pn = pw.getPn();
+        player = pw.getPn();
 
         frame = new JDialog();
 
@@ -101,12 +101,12 @@ public class Exploration {
     private void attack() {
 
         int damage;
-        pn.fight(enemy);
+        player.fight(enemy);
 
-        explorationInfo.setText(explorationInfo.getText() + pn.getName()
-                + " attacks with a force of " + pn.getAttack() + ".\n");
+        explorationInfo.setText(explorationInfo.getText() + player.getName()
+                + " attacks with a force of " + player.getAttack() + ".\n");
 
-        damage = pn.getAttack() - enemy.getDefense();
+        damage = player.getAttack() - enemy.getDefense();
 
         if (damage <= 0) damage = 1;
 
@@ -117,24 +117,24 @@ public class Exploration {
         if (!enemy.isItsAlive()) {
             enemyDefeated();
         } else {
-            enemy.fight(pn);
+            enemy.fight(player);
             explorationInfo.setText(explorationInfo.getText() + enemy.getName()
                     + " attacks with a force of " + enemy.getAttack() + ".\n");
 
-            damage = enemy.getAttack() - pn.getDefense();
+            damage = enemy.getAttack() - player.getDefense();
             if (damage <= 0) damage = 1;
 
-            explorationInfo.setText(explorationInfo.getText() + pn.getName()
+            explorationInfo.setText(explorationInfo.getText() + player.getName()
                     + " has received " + damage + " damage due to your defense.\n\n");
-            pn.establishHealth(pn.getActualHealth());
+            player.establishHealth(player.getActualHealth());
 
-            if (!pn.isItsAlive()) derrota();
+            if (!player.isItsAlive()) derrota();
 
         }
     }
 
     private void derrota() {
-        FinalWindow f = new FinalWindow(FinalWindow.DEFEAT, pn);
+        FinalWindow f = new FinalWindow(FinalWindow.DEFEAT, player);
         f.open();
     }
 
@@ -147,13 +147,13 @@ public class Exploration {
                 + "You receive " + enemy.getGoldReward() + " gold.\n"
                 + "You get " + enemy.getExpReward() + " exp points.");
 
-        pn.upExp(enemy.getExpReward());
-        pw.getLabExp().setText("  Exp: " + pn.getExp() + "/" + pn.getNecessaryExp());
-        pw.getLabLevel().setText("  Lvl: " + pn.getLevel());
-        pw.getLabAttributes().setText(" Dmg: " + pn.getAttack() + "  |  Def: " + pn.getDefense() + "   Health: ");
+        player.upExp(enemy.getExpReward());
+        pw.getLabExp().setText("  Exp: " + player.getExp() + "/" + player.getNecessaryExp());
+        pw.getLabLevel().setText("  Lvl: " + player.getLevel());
+        pw.getLabAttributes().setText(" Dmg: " + player.getAttack() + "  |  Def: " + player.getDefense() + "   Health: ");
 
-        pn.setGold(enemy.getGoldReward());
-        pw.getLabGold().setText("  Gold: " + pn.getGold());
+        player.setGold(enemy.getGoldReward());
+        pw.getLabGold().setText("  Gold: " + player.getGold());
 
     }
 

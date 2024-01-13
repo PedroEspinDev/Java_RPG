@@ -1,6 +1,6 @@
 package rpg.gameInterface;
 
-import rpg.characters.entity.Person;
+import rpg.characters.entity.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,11 +14,11 @@ public class FinalWindow {
     private JDialog frame;
     private JPanel principalPanel;
     private int condition;
-    private Person pn;
+    private Player pn;
     public static final int VICTORY = 0;
     public static final int DEFEAT = 1;
 
-    public FinalWindow(int condition, Person pn) {
+    public FinalWindow(int condition, Player pn) {
 
         frame = new JDialog();
         principalPanel = new JPanel(new BorderLayout());
