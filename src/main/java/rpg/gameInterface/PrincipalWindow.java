@@ -15,7 +15,7 @@ public class PrincipalWindow {
     private JLabel labName, labLevel, labExp, labGold, labAttributes;
     private JLabel labImage;
 
-    private JButton botExplore;
+    private JButton exploreButton, storeButton;
 
     private Player player;
 
@@ -36,7 +36,8 @@ public class PrincipalWindow {
 
         labImage = new JLabel();
 
-        botExplore = new JButton("FIGHT");
+        exploreButton = new JButton("Fight");
+        exploreButton = new JButton("Store");
 
     }
 
@@ -62,9 +63,11 @@ public class PrincipalWindow {
         labImage.setIcon(new ImageIcon("./images/portada1.jpg"));
         mainPanel.add(labImage, BorderLayout.CENTER);
 
-        //Create interaction buttonsin bottom panel.
-        botExplore.addActionListener(e -> newExploration());
-        bottomPanel.add(botExplore);
+        //Create interaction buttons in bottom panel.
+        exploreButton.addActionListener(e -> newExploration());
+        exploreButton.addActionListener(e -> openStore());
+        bottomPanel.add(exploreButton);
+        bottomPanel.add(storeButton);
 
         //Add secondary panels to the main panel.
         mainPanel.add(topPanel, BorderLayout.NORTH);
@@ -72,6 +75,15 @@ public class PrincipalWindow {
 
         //Add main panel to the frame.
         frame.add(mainPanel);
+
+    }
+
+    private void openStore() {
+        Store s = new Store(this);
+        s.openStore();
+        mainPanel.add(topPanel, BorderLayout.NORTH);
+        frame.repaint();
+
 
     }
 

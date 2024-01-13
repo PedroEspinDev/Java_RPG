@@ -44,11 +44,8 @@ public class Exploration {
     }
 
     public void startExploration() {
-
         chooseDificulty();
         createInterface();
-
-
     }
 
     private void chooseDificulty() {
@@ -74,7 +71,6 @@ public class Exploration {
         monsterPanel.add(enemy.getImages());
         monsterPanel.add(secMonsterPanel);
 
-
         //We make a lower panel with buttons.
         botAttack.addActionListener(e -> attack());
         botEscape.addActionListener(e -> frame.dispose());
@@ -88,13 +84,11 @@ public class Exploration {
         principalPanel.add(bottomPanel, BorderLayout.SOUTH);
         principalPanel.add(monsterPanel, BorderLayout.EAST);
 
-
         frame.add(principalPanel);
         frame.setSize(800, 800);
         frame.setLocationRelativeTo(null);
         frame.setModal(true);
         frame.setVisible(true);
-
 
     }
 
