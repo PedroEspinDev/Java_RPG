@@ -64,7 +64,7 @@ public class Enemy extends Entity {
         } else if (i < 200) {
             e = new Enemy(hardNames[numEnemy], numAttack + 8, numDefense + 5, numHealt + 80, "hard");
         } else {
-            e = new Enemy("Boss", numAttack + 15, numDefense + 10, numHealt + 150, "finalBoss");
+            e = new Enemy("Final Boss", numAttack + 15, numDefense + 10, numHealt + 150, "Boss");
         }
         return e;
     }
