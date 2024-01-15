@@ -37,7 +37,7 @@ public class PrincipalWindow {
         labImage = new JLabel();
 
         exploreButton = new JButton("Fight");
-        exploreButton = new JButton("Store");
+        storeButton = new JButton("Store");
 
     }
 
@@ -65,7 +65,7 @@ public class PrincipalWindow {
 
         //Create interaction buttons in bottom panel.
         exploreButton.addActionListener(e -> newExploration());
-        exploreButton.addActionListener(e -> openStore());
+        storeButton.addActionListener(e -> openStore());
         bottomPanel.add(exploreButton);
         bottomPanel.add(storeButton);
 
