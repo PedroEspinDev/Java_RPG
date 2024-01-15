@@ -147,11 +147,18 @@ public class Exploration {
         pw.getLabAttributes().setText(" Dmg: " + player.getAttack() + "  |  Def: " + player.getDefense() + "   Health: ");
 
         // Add the gold reward to the player's existing gold.
-        player.addGold(enemy.getGoldReward());
-        pw.getLabGold().setText("  Gold: " + enemy.getGoldReward());
+        player.setGold(player.getGold() + enemy.getGoldReward());
+        pw.getLabGold().setText("  Gold: " + player.getGold());
 
     }
 
+    public static int getNumExploration() {
+        return numExploration;
+    }
+
+    public static void setNumExploration(int numExploration) {
+        Exploration.numExploration = numExploration;
+    }
 }
 
 

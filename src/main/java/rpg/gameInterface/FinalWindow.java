@@ -29,8 +29,8 @@ public class FinalWindow {
         this.condition = condition;
         this.pn = pn;
 
-        if (condition == VICTORY) imagePath = new ImageIcon("./images/victoria.jpeg");
-        else imagePath = new ImageIcon("./images/derrota.jpeg");
+        if (condition == VICTORY) imagePath = new ImageIcon("./images/victory.jpeg");
+        else imagePath = new ImageIcon("./images/defeated.jpeg");
 
         image = new JLabel(imagePath);
     }

@@ -60,7 +60,7 @@ public class PrincipalWindow {
         topPanel.add(player.getHealthBar());
 
         //Create the central image of the windows.
-        labImage.setIcon(new ImageIcon("./images/portada1.jpg"));
+        labImage.setIcon(new ImageIcon("./images/frontpage.jpg"));
         mainPanel.add(labImage, BorderLayout.CENTER);
 
         //Create interaction buttons in bottom panel.
