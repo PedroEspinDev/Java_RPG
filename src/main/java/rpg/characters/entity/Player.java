@@ -34,7 +34,7 @@ public class Player extends Entity {
 
     public void upExp(int amount) {
         exp += amount;
-        if (exp >= necessaryExp) upLevel();
+        while (exp >= necessaryExp) upLevel();
     }
 
     public int getNecessaryExp() {

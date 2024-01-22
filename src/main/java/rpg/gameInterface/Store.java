@@ -12,11 +12,9 @@ public class Store {
     private JPanel swordPanel, shieldPanel, potionPanel, mapPanel;
     private JLabel swordImage, shieldImage, potionImage, mapImage;
     private JLabel descriptionSword, descriptionShield, descriptionPotion, descriptionMap;
-
     private static JButton swordButton, shieldButton, potionButton, mapButton;
     private static boolean spendSword = false, spendShield = false, spendPotion = false, spendMap = false;
     private JButton exitButton;
-
     private PrincipalWindow pw;
     private Player player;
 
@@ -78,7 +76,6 @@ public class Store {
         frame.setLocationRelativeTo(null);
         frame.setModal(true);
         frame.add(principalPanel);
-
     }
 
     private void addObject(JPanel objectPanel, JLabel image, JLabel description, JButton button, String name, boolean spend) {
@@ -96,7 +93,6 @@ public class Store {
         objectPanel.add(button);
 
         panelStore.add(objectPanel);
-
     }
 
     private void buyObject(JButton button, String name) {
@@ -143,10 +139,6 @@ public class Store {
                     spendMap = true;
                 }
                 break;
-
         }
-
-
     }
-
 }

@@ -13,10 +13,9 @@ public class Exploration {
     private JButton botAttack, botEscape;
     private JTextArea explorationInfo;
     private JScrollPane barDes;
-
     private Player player;
     private Enemy enemy;
-
+    private boolean fightWithBoss = false;
     private static int numExploration = 0;
     private PrincipalWindow pw;
 
@@ -56,6 +55,8 @@ public class Exploration {
         //Generation random enemy.
         enemy = enemy.enemyGeneration(randomNum);
 
+        if (enemy.getName().equals("Final Boss")) fightWithBoss = true;
+
     }
 
     private void createInterface() {
@@ -77,6 +78,7 @@ public class Exploration {
 
         bottomPanel.add(botAttack);
         bottomPanel.add(new JLabel("          "));
+        if (fightWithBoss) botEscape.setEnabled(false);
         bottomPanel.add(botEscape);
 
         //Add secondary panels to the main one.
@@ -122,12 +124,12 @@ public class Exploration {
                     + " has received " + damage + " damage due to your defense.\n\n");
             player.establishHealth(player.getActualHealth());
 
-            if (!player.isItsAlive()) derrota();
+            if (!player.isItsAlive()) defeat();
 
         }
     }
 
-    private void derrota() {
+    private void defeat() {
         FinalWindow f = new FinalWindow(FinalWindow.DEFEAT, player);
         f.open();
     }
@@ -149,6 +151,11 @@ public class Exploration {
         // Add the gold reward to the player's existing gold.
         player.setGold(player.getGold() + enemy.getGoldReward());
         pw.getLabGold().setText("  Gold: " + player.getGold());
+
+        if (fightWithBoss) {
+            FinalWindow f = new FinalWindow(FinalWindow.VICTORY, player);
+            f.open();
+        }
 
     }
 

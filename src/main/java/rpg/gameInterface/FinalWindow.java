@@ -14,11 +14,11 @@ public class FinalWindow {
     private JDialog frame;
     private JPanel principalPanel;
     private int condition;
-    private Player pn;
+    private Player player;
     public static final int VICTORY = 0;
     public static final int DEFEAT = 1;
 
-    public FinalWindow(int condition, Player pn) {
+    public FinalWindow(int condition, Player player) {
 
         frame = new JDialog();
         principalPanel = new JPanel(new BorderLayout());
@@ -27,7 +27,7 @@ public class FinalWindow {
         exitButton = new JButton("Finish");
 
         this.condition = condition;
-        this.pn = pn;
+        this.player = player;
 
         if (condition == VICTORY) imagePath = new ImageIcon("./images/victory.jpeg");
         else imagePath = new ImageIcon("./images/defeated.jpeg");
@@ -49,7 +49,8 @@ public class FinalWindow {
             finalMenssage = "Congratulations, you have managed to defeat the final boss! \n"
                     + "With wounds in your body that you can never erase.\n"
                     + "You were able to defeat all those enemies, but...at what cost?\n"
-                    + pn.getName() + " you managed to bring with you " + pn.getGold() + " gold coins, spend them wisely.";
+                    + player.getName() + player.getLevel() + " you managed to bring with you "
+                    + player.getGold() + " gold coins, spend them wisely.";
         } else {
             finalMenssage = "The castle monsters defeated you and took your soul.\n"
                     + "You were a disgrace to the region and your reign, your name will soon be forgotten.\n"
@@ -71,7 +72,7 @@ public class FinalWindow {
         principalPanel.add(textArea, BorderLayout.CENTER);
 
         //We add an exit button to the south part.
-        exitButton.addActionListener(e ->  System.exit(0));
+        exitButton.addActionListener(e -> System.exit(0));
         principalPanel.add(exitButton, BorderLayout.SOUTH);
 
         frame.add(principalPanel);
