@@ -2,7 +2,7 @@ name: Build-Publish
 on:
   push:
     branches:
-      - 'Corrections'
+      - 'master'
 jobs:
   build:
     runs-on: ubuntu-latest
