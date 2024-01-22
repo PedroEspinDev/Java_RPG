@@ -58,7 +58,6 @@ public class Exploration {
         if (enemy.getName().equals("Final Boss")) fightWithBoss = true;
 
     }
-
     private void createInterface() {
         //Top panel ready.
         //We add text area to the main panel.
