@@ -5,7 +5,7 @@ FROM openjdk:17
 WORKDIR /app
 
 # Copia el archivo JAR de tu aplicación al contenedor
-COPY target/tu-aplicacion.jar .
+COPY target/miniRPG.jar .
 
 # Comando por defecto para ejecutar la aplicación
-CMD ["java", "-jar", "tu-aplicacion.jar"]
+CMD ["java", "-jar", "miniRPG.jar"]
