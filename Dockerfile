@@ -1,20 +1,11 @@
-# Usa la imagen base oficial de OpenJDK con Java 17
-FROM openjdk:17-jdk
+# Utiliza una imagen base de OpenJDK 17
+FROM openjdk:17
 
-# Establece el directorio de trabajo en /app
+# Establece el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Copia el archivo pom.xml al directorio de trabajo
-COPY pom.xml .
+# Copia el archivo JAR de tu aplicación al contenedor
+COPY target/tu-aplicacion.jar .
 
-# Copia los archivos fuente y recursos al directorio de trabajo
-COPY src ./src
-
-# Empaqueta la aplicación utilizando Maven
-RUN ./mvnw package -DskipTests
-
-# Expone el puerto si la aplicación lo requiere
-EXPOSE 8080
-
-# Comando para ejecutar la aplicación cuando el contenedor se inicia
-CMD ["java", "-jar", "target/JavaRPG.jar"]
+# Comando por defecto para ejecutar la aplicación
+CMD ["java", "-jar", "tu-aplicacion.jar"]
