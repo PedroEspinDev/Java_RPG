@@ -28,7 +28,7 @@ public class Enemy extends Entity {
             case "easy":
                 expReward = (int) (Math.random() * 2 + 1);
                 goldReward = (int) (Math.random() * 5 + 1);
-                labName.setForeground(Color.BLUE);
+                labName.setForeground(Color.GREEN);
                 break;
             case "medium":
                 expReward = (int) (Math.random() * 6 + 2);

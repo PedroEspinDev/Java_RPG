@@ -37,9 +37,9 @@ public class Store {
         potionImage = new JLabel(new ImageIcon("./images/potion.png"));
         mapImage = new JLabel(new ImageIcon("./images/map.png"));
 
-        descriptionSword = new JLabel("Sword - 100 Gold.");
-        descriptionShield = new JLabel("Shield - 100 Gold.");
-        descriptionPotion = new JLabel("Healt Potion - 50 Gold.");
+        descriptionSword = new JLabel("Sword - 200 Gold.");
+        descriptionShield = new JLabel("Shield - 200 Gold.");
+        descriptionPotion = new JLabel("Healt Potion - 100 Gold.");
         descriptionMap = new JLabel("Map - 10 Gold.");
 
         swordButton = new JButton("Buy");
@@ -52,6 +52,7 @@ public class Store {
 
     public void openStore() {
         mountInterface();
+        frame.setUndecorated(true);
         frame.setVisible(true);
     }
 
@@ -99,33 +100,31 @@ public class Store {
 
         switch (name) {
             case "sword":
-                if (player.getGold() >= 100) {
-                    player.setAttack(player.getAttack() + 3);
+                if (player.getGold() >= 200) {
+                    player.setAttack(player.getAttack() + 5);
                     pw.getLabAttributes().setText(" Dmg: " + player.getAttack() + "  |  Def: " + player.getDefense() + "   Health: ");
-                    player.setGold(player.getGold() - 100);
+                    player.setGold(player.getGold() - 200);
                     pw.getLabGold().setText("  Gold: " + player.getGold());
                     button.setEnabled(false);
                     spendSword = true;
                 }
                 break;
             case "shield":
-                if (player.getGold() >= 100) {
-                    player.setDefense(player.getDefense() + 2);
+                if (player.getGold() >= 200) {
+                    player.setDefense(player.getDefense() + 3);
                     pw.getLabAttributes().setText(" Dmg: " + player.getAttack() + "  |  Def: " + player.getDefense() + "   Health: ");
-                    player.setGold(player.getGold() - 100);
+                    player.setGold(player.getGold() - 200);
                     pw.getLabGold().setText("  Gold: " + player.getGold());
                     button.setEnabled(false);
                     spendMap = true;
                 }
                 break;
             case "potion":
-                if (player.getGold() >= 50) {
+                if (player.getGold() >= 100) {
                     player.setActualHealth((int) player.getMaxHealth());
                     player.establishHealth(player.getActualHealth());
-                    player.setGold(player.getGold() - 50);
+                    player.setGold(player.getGold() - 100);
                     pw.getLabGold().setText("  Gold: " + player.getGold());
-                    button.setEnabled(false);
-                    spendPotion = true;
                 }
                 break;
             //In this case we increase the exploration counter of the Exploration class by 250,

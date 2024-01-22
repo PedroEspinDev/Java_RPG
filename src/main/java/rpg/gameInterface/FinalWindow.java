@@ -39,6 +39,7 @@ public class FinalWindow {
 
         prepareMessage();
         assembleScene();
+        frame.setUndecorated(true);
         frame.setVisible(true);
     }
 

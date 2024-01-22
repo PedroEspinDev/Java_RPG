@@ -15,7 +15,7 @@ public class PrincipalWindow {
     private JLabel labName, labLevel, labExp, labGold, labAttributes;
     private JLabel labImage;
 
-    private JButton exploreButton, storeButton;
+    private JButton exploreButton, storeButton, exitButton;
 
     private Player player;
 
@@ -38,12 +38,14 @@ public class PrincipalWindow {
 
         exploreButton = new JButton("Fight");
         storeButton = new JButton("Store");
+        exitButton = new JButton("Exit");
 
     }
 
     public void StartGame() {
 
         setUpScene();
+        frame.setUndecorated(true);
         frame.setVisible(true);
 
     }
@@ -66,8 +68,11 @@ public class PrincipalWindow {
         //Create interaction buttons in bottom panel.
         exploreButton.addActionListener(e -> newExploration());
         storeButton.addActionListener(e -> openStore());
+        exitButton.addActionListener(e -> System.exit(0));
         bottomPanel.add(exploreButton);
         bottomPanel.add(storeButton);
+        bottomPanel.add(exitButton);
+
 
         //Add secondary panels to the main panel.
         mainPanel.add(topPanel, BorderLayout.NORTH);

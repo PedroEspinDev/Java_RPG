@@ -90,6 +90,7 @@ public class Exploration {
         frame.setSize(800, 800);
         frame.setLocationRelativeTo(null);
         frame.setModal(true);
+        frame.setUndecorated(true);
         frame.setVisible(true);
 
     }
