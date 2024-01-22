@@ -74,7 +74,10 @@ public class Exploration {
 
         //We make a lower panel with buttons.
         botAttack.addActionListener(e -> attack());
-        botEscape.addActionListener(e -> frame.dispose());
+        botEscape.addActionListener(e -> {
+            numExploration ++;
+            frame.dispose();
+        });
 
         bottomPanel.add(botAttack);
         bottomPanel.add(new JLabel("          "));
