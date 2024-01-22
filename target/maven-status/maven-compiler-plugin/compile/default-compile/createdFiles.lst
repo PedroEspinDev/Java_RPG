@@ -1,0 +1,11 @@
+rpg\gameInterface\PrincipalWindow.class
+Main.class
+customPanelFrame\CustomFrame.class
+rpg\characters\entity\Entity.class
+rpg\characters\entity\Exploration.class
+rpg\characters\entity\Player.class
+rpg\gameInterface\FinalWindow.class
+rpg\characters\entity\Enemy.class
+customPanelFrame\CustomPanel.class
+rpg\characters\entity\Interface\IAttackable.class
+rpg\gameInterface\Store.class
