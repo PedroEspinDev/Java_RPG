@@ -24,6 +24,10 @@ No se requieren dependencias externas. El juego utiliza las bibliotecas estánda
 - `src/`: Código fuente Java.
 - `customPanelFrame/`: Código fuente Java customizado para la personalización de las ventanas y paneles.
 - `images/`: Directorio que contiene las imágenes utilizadas en el juego.
+- El proyecto se divide en 3 partes:
+  - Customización de las ventanas en el package `customPanelFrame/`.
+  - Logica de cada clase con sus atributos en el package `rpg/characters/`.
+  - Package `gameInterface/` es donde se montan las escenas.
 
 ## Tecnologías Utilizadas
 
